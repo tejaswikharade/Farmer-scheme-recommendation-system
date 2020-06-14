@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+/* Style the header */
+header {
+  background-color: #50C878;
+  padding: 30px;
+  text-align: center;
+  font-size: 10px;
+  color: white;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+  padding-top:50px;
+  padding-right: 200px;
+  padding-left: 200px;
+  padding-bottom: 50px;
+  height: 500px;
+}
+
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 2;
+  background: #82E0AA;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 4;
+  background-image: url(static/images/bk.jpg);
+  padding: 10px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #50C878;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+header {
+  display: block; /* This is the default, not needed */
+  text-align: center;
+  top: 0;
+  float: left;
+  padding-left: 40px;
+}
+img {
+  text-align: center;
+  top: 0; /* Not needed... */
+  float: left;
+  padding-left: 40px;
+}
+.title_print {
+  text-align: center;
+  padding-left: 80px; /* Do you need this? */
+    background-color: #50C878;
+    height: 80px;
+
+  
+
+
+}
+.button {
+    position: absolute;
+    top: 50%;
+}
+</style>
+</head>
+<div id="google_translate_element">
+  <script type="text/javascript" 
+ src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+<body>
+<div class="header">
+  <img src= "  {{url_for('static',filename='images/logo.png')}}"  style="float: left; padding-top: 0px;"   >
+  <div class="title_print" style="text-align: center; padding-top: 20px;">
+    <strong>  FARMERS SCHEME PORTAL</strong> 
+    <a href="{{ url_for('index') }}" style="float: right; padding-right: 50px;">  Back to home</a> 
+
+  </div>
+ 
+</div>
+
+
+
+<section>
+  <nav>
+    <ul>
+         {% for item in ans %}<br>
+        <li>{{item}}</li>
+    {% endfor %}
+    
+
+    </ul>
+  </nav>
+  
+  <article>
+   <h1>   National Mission for Sustainable Agriculture (NMSA)</h1>
+  <p>
+    NMSA is one of the eight Missions under National Action Plan on Climate Change (NAPCC). It aims at promoting Sustainable Agriculture through climate change adaptation measures, enhancing agriculture productivity especially in rainfed areas focusing on integrated farming, soil health management, and synergizing resource conservation. 
+    
+    
+    
+      
+</p>
+  </article>
+</section>
+<input type=button style="text-align: center; margin-left: 600px; background-size: 200px; background-color: grey; font-size: 20px;" onClick="location.href='more.html'" value='MORE DETAILS'>
+
+
+
+
+</body>
+</html>
